@@ -22,29 +22,36 @@ html {
 
 .controls {
   display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
   gap: 20px;
   margin-bottom: 20px;
 }
 
 button {
-  background: #990000;
+  background-color: #3a519f;
   color: #fff;
   border-radius: 5px;
-  padding: 10px 20px;
+  padding: 12px 20px;
   border: 0;
   cursor: pointer;
   font-family: Fredoka;
   font-size: 18pt;
 }
 
-.disabled {
-  background: #949494;
-  color: #fff;
+button:hover {
+  background-color: #b0cb1f;
+  color: #1b1c1e;
 }
 
 .stats {
+  background-color: #990000;
   color: #fff;
   font-size: 14pt;
+  padding: 16px;
+  border-radius: 4px;
+  width: 124px;
 }
 
 .board-container {
