@@ -112,12 +112,18 @@ button:hover {
 .card-back {
   transform: rotateY(180deg) rotateZ(50deg);
   font-size: 28pt;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   user-select: none;
   text-align: center;
   line-height: 100px;
   background: #fdf8e6;
 }
-
+.card-back img {
+  width: 80%;
+  height: auto;
+}
 .card.flipped .card-front {
   transform: rotateY(180deg) rotateZ(50deg);
 }

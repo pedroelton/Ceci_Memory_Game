@@ -50,26 +50,37 @@ const generateGame = () => {
     throw new Error("The dimension of the board must be an even number.");
   }
 
-  const emojis = ["🥔", "🍒", "🥑", "🌽", "🥕", "🍇", "🍉", "🍌", "🥭", "🍍"];
-  const picks = pickRandom(emojis, (dimensions * dimensions) / 2);
+  // const emojis = ["🥔", "🍒", "🥑", "🌽", "🥕", "🍇", "🍉", "🍌", "🥭", "🍍"];
+  const images = [
+    "assets/SVG/Asset1.svg",
+    "assets/SVG/Asset2.svg",
+    "assets/SVG/Asset3.svg",
+    "assets/SVG/Asset4.svg",
+    "assets/SVG/Asset5.svg",
+    "assets/SVG/Asset6.svg",
+    "assets/SVG/Asset7.svg",
+    "assets/SVG/Asset8.svg",
+    "assets/SVG/Asset9.svg",
+    "assets/SVG/Asset10.svg",
+  ];
+  const picks = pickRandom(images, (dimensions * dimensions) / 2);
   const items = shuffle([...picks, ...picks]);
   const cards = `
-        <div class="board" style="grid-template-columns: repeat(${dimensions}, auto)">
-            ${items
-              .map(
-                (item) => `
-                <div class="card">
-                    <div class="card-front"></div>
-                    <div class="card-back">${item}</div>
-                </div>
-            `
-              )
-              .join("")}
-       </div>
-    `;
+    <div class="board" style="grid-template-columns: repeat(${dimensions}, auto)">
+      ${items
+        .map((item, index) => {
+          return `
+          <div class="card" data-value="${item}">
+            <div class="card-front"></div>
+            <div class="card-back"><img src="${item}" alt="Card Image"></div>
+          </div>
+        `;
+        })
+        .join("")}
+    </div>
+  `;
 
   const parser = new DOMParser().parseFromString(cards, "text/html");
-
   selectors.board.replaceWith(parser.querySelector(".board"));
 };
 
@@ -108,7 +119,7 @@ const flipCard = (card) => {
   if (state.flippedCards === 2) {
     const flippedCards = document.querySelectorAll(".flipped:not(.matched)");
 
-    if (flippedCards[0].innerText === flippedCards[1].innerText) {
+    if (flippedCards[0].dataset.value === flippedCards[1].dataset.value) {
       flippedCards[0].classList.add("matched");
       flippedCards[1].classList.add("matched");
     }
@@ -148,8 +159,8 @@ const attachEventListeners = () => {
     ) {
       flipCard(eventParent);
     } else if (
-      !eventTarget.nodeName === "BUTTON" &&
-      eventTarget.className.includes("disabled")
+      eventTarget.nodeName === "BUTTON" &&
+      !eventTarget.className.includes("disabled")
     ) {
       startGame();
     }
