@@ -6,13 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
     <title>🐸 CECI Memory Game</title>
-
     <link rel="stylesheet" href="assets/styles.css" />
     <script src="assets/game.js" defer></script>
   </head>
   <body>
     <div class="game">
       <div class="controls">
+        <!-- Dropdown menu to select the theme -->
+        <select id="theme-selector">
+          <option value="MrF" selected>Mr.F</option>
+          <!-- Set MrF as the initial selected value -->
+          <option value="AmazingConstructions">Amazing Constructions</option>
+        </select>
         <div class="stats">
           <div class="moves">0 moves</div>
           <div class="timer">time: 0 sec</div>

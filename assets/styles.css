@@ -153,3 +153,12 @@ button:hover {
 .highlight {
   color: #990000;
 }
+#theme-selector {
+  padding: 10px;
+  font-size: 16pt;
+  border-radius: 5px;
+  border: 1px solid #990000;
+  background-color: #3a519f;
+  color: white;
+  font-family: Fredoka;
+}
