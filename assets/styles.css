@@ -76,8 +76,8 @@ button:hover {
 .board {
   display: grid;
   grid-template-columns: repeat(4, auto);
-  grid-gap: 20px;
-  padding: 20px;
+  grid-gap: 24px;
+  padding: 24px;
 }
 
 .board-container.flipped .board {
