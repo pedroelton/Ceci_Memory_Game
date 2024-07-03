@@ -11,6 +11,10 @@ html {
   font-family: Fredoka;
 }
 
+body {
+  touch-action: manipulation;
+}
+
 .game {
   position: absolute;
   top: 50%;
