@@ -55,9 +55,11 @@ button:hover {
   border-radius: 4px;
   width: 124px;
 }
-
 .board-container {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .board,
@@ -72,10 +74,10 @@ button:hover {
 }
 
 .board {
-  padding: 20px;
   display: grid;
   grid-template-columns: repeat(4, auto);
   grid-gap: 20px;
+  padding: 20px;
 }
 
 .board-container.flipped .board {
@@ -122,10 +124,12 @@ button:hover {
   line-height: 100px;
   background: #fdf8e6;
 }
+
 .card-back img {
   width: 80%;
   height: auto;
 }
+
 .card.flipped .card-front {
   transform: rotateY(180deg) rotateZ(50deg);
 }
