@@ -90,30 +90,6 @@ const generateGame = (theme = "MrF") => {
 
   // Reattach event listeners
   attachEventListeners();
-  // Show loading overlay
-  selectors.loadingOverlay.style.display = "flex";
-
-  // Wait for all images to load
-  const imagesToLoad = document.querySelectorAll(".card-back img");
-  let loadedImages = 0;
-
-  imagesToLoad.forEach((img) => {
-    img.onload = () => {
-      loadedImages++;
-      if (loadedImages === imagesToLoad.length) {
-        // Hide loading overlay when all images are loaded
-        selectors.loadingOverlay.style.display = "none";
-      }
-    };
-
-    // Handle cases where the image fails to load
-    img.onerror = () => {
-      loadedImages++;
-      if (loadedImages === imagesToLoad.length) {
-        selectors.loadingOverlay.style.display = "none";
-      }
-    };
-  });
 };
 
 // Function to start the game and timer

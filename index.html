@@ -10,6 +10,21 @@
     <script src="assets/game.js" defer></script>
   </head>
   <body>
+    <div class="loading-overlay">
+      <script
+        src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+        type="module"
+      ></script>
+      <dotlottie-player
+        src="https://lottie.host/f5d53928-acdf-4878-902a-12e533d0b766/5Iv2y8v2tx.json"
+        background="transparent"
+        speed="1"
+        style="width: 300px; height: 300px"
+        loop
+        autoplay
+      ></dotlottie-player>
+    </div>
+
     <div class="game">
       <div class="controls">
         <!-- Dropdown menu to select the theme -->
