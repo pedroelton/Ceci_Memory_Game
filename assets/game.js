@@ -220,3 +220,20 @@ const attachEventListeners = () => {
 };
 
 generateGame("MrF");
+// POP-UP
+
+document.getElementById("openPopup").addEventListener("click", function () {
+  document.getElementById("popupContainer").style.display = "flex";
+});
+
+document.getElementById("closePopup").addEventListener("click", function () {
+  document.getElementById("popupContainer").style.display = "none";
+});
+
+document
+  .getElementById("popupContainer")
+  .addEventListener("click", function (event) {
+    if (event.target === this) {
+      document.getElementById("popupContainer").style.display = "none";
+    }
+  });

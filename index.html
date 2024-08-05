@@ -10,6 +10,7 @@
     <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
     <title>🐸 CECI Memory Game</title>
     <link rel="stylesheet" href="assets/styles.css" />
+    <link rel="stylesheet" href="assets/popup.css" />
     <!-- Google tag (gtag.js) -->
     <script
       async
@@ -64,5 +65,23 @@
         <div class="win">You won!</div>
       </div>
     </div>
+    <footer>
+      <p>By <a href="https://ceci.jp">CECI Educational Academy</a></p>
+      <button id="openPopup">Instructions</button>
+      <div id="popupContainer" class="popup-container">
+        <div class="popup">
+          <span id="closePopup" class="close-popup">&times;</span>
+          <h2 class="popup-title">CECI Memory Game Instructions</h2>
+          <p class="popup-text">
+            If you are playing with more than one kid, take turns to tap two
+            images and try to get the whole board done. Also, compete between
+            kids or groups of kids to see who can make it faster or in fewer
+            moves. There are a few options of Memory games, the default is Mr.
+            F.
+          </p>
+          <b>To close this popup, tap outside.</b>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
