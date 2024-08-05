@@ -58,6 +58,7 @@
   font-size: 2rem;
   color: var(--primary);
   font-weight: 600;
+  line-height: 120%;
 }
 .popup-text {
   font-size: 1rem;
